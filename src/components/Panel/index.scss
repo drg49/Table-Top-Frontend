@@ -1,0 +1,37 @@
+$purple-shadow: #091f36;
+$grey-blue: #4f5f76;
+
+.table-top-panel {
+  border: 1px solid $purple-shadow;
+  background-color: $grey-blue;
+  border-radius: 8px;
+
+  &.sm {
+    width: 200px;
+    height: 200px;
+    padding: 10px;
+  }
+
+  &.md {
+    width: 300px;
+    height: 300px;
+    padding: 10px;
+  }
+
+  &.lg {
+    width: 400px;
+    height: 400px;
+    padding: 10px;
+  }
+
+  h2 {
+    margin: 0px;
+    color: whitesmoke;
+  }
+  
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
