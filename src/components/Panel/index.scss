@@ -1,5 +1,14 @@
 $purple-shadow: #091f36;
 $grey-blue: #4f5f76;
+$small: 200px;
+$medium: 300px;
+$large: 400px;
+$panel-padding: 10px;
+$header-height: 32px;
+
+@function calculate-height($size-dimension) {
+  @return $size-dimension - $panel-padding - $header-height;
+}
 
 .table-top-panel {
   border: 1px solid $purple-shadow;
@@ -7,21 +16,34 @@ $grey-blue: #4f5f76;
   border-radius: 8px;
 
   &.sm {
-    width: 200px;
-    height: 200px;
-    padding: 10px;
+    width: $small;
+    padding: $panel-padding;
+
+    .table-top-panel-content {
+      height: calculate-height($small);
+    }
   }
 
   &.md {
-    width: 300px;
-    height: 300px;
-    padding: 10px;
+    width: $medium;
+    padding: $panel-padding;
+
+    .table-top-panel-content {
+      height: calculate-height($medium);
+    }
   }
 
   &.lg {
-    width: 400px;
-    height: 400px;
-    padding: 10px;
+    width: $large;
+    padding: $panel-padding;
+
+    .table-top-panel-content {
+      height: calculate-height($large);
+    }
+  }
+
+  .table-top-panel-content {
+    overflow: auto;
   }
 
   h2 {

@@ -13,7 +13,9 @@ export default function Panel({ children, id, size, header, closable }) {
         <h2>{header}</h2>
         {closable && <button className='close-btn'>{closeIcon}</button>}
       </header>
-      {children}
+      <div className="table-top-panel-content table-top-scroll">
+        {children}
+      </div>
     </div>
   )
 }
