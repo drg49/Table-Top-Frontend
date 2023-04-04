@@ -5,12 +5,13 @@ import './index.scss';
 
 const closeIcon = <FontAwesomeIcon icon={faClose} size='md' color='white' />;
 
-export default function Panel({ children, id, size, header, closable }) {
+// Size: sm, md, lg
+export default function Panel({ children, id, size, title, closable }) {
 
   return (
     <div id={id} className={`table-top-panel ${size}`}>
       <header>
-        <h2>{header}</h2>
+        <h2>{title}</h2>
         {closable && <button className='close-btn'>{closeIcon}</button>}
       </header>
       <div className="table-top-panel-content table-top-scroll">
