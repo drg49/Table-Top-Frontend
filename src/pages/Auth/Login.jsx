@@ -26,9 +26,6 @@ export default function Login(){
           change={handleChange}
           animate
         />
-
-        
-
       </Form>
       <br />
       <button>Login</button>

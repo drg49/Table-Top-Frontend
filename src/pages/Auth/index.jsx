@@ -16,7 +16,11 @@ export default function Auth(){
 
   return (
     <>
-      <Panel size='lg' closable={false} id='auth-form'>
+      <Panel
+        id='auth-form'
+        size='lg'
+        closable={false}
+      >
         <Logo />
         {formState === login ? <Login /> : <Register />}
         <br />

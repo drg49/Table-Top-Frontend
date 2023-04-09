@@ -19,7 +19,7 @@ $header-height: 32px;
     width: $small;
     padding: $panel-padding;
 
-    .table-top-panel-content {
+    &.fixed-height .table-top-panel-content {
       height: calculate-height($small);
     }
   }
@@ -28,7 +28,7 @@ $header-height: 32px;
     width: $medium;
     padding: $panel-padding;
 
-    .table-top-panel-content {
+    &.fixed-height .table-top-panel-content {
       height: calculate-height($medium);
     }
   }
@@ -37,9 +37,10 @@ $header-height: 32px;
     width: $large;
     padding: $panel-padding;
 
-    .table-top-panel-content {
+    &.fixed-height .table-top-panel-content {
       height: calculate-height($large);
     }
+    
   }
 
   .table-top-panel-content {
