@@ -12,6 +12,10 @@ code {
     monospace;
 }
 
+textarea:focus, input:focus{
+  outline: none;
+}
+
 #main-spinner {
   position: absolute;
   left: 50%;

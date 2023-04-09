@@ -1,0 +1,16 @@
+body {
+  background-image: url("../../images/food-bg-login.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  height: 100vh;
+}
+
+#auth-form {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) translateX(50%);
+    background: rgb(79 95 118 / 40%);
+    border: none;
+}

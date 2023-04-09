@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faClose } from '@fortawesome/free-solid-svg-icons';
 import './index.scss';
 
-const closeIcon = <FontAwesomeIcon icon={faClose} size='md' color='white' />;
+const closeIcon = <FontAwesomeIcon icon={faClose} size='sm' color='white' />;
 
 // Size: sm, md, lg
 export default function Panel({ children, id, size, title, closable }) {

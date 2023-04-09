@@ -4,16 +4,20 @@ import Login from './Login';
 import { authState } from '../../utils/constants';
 import Register from './Register';
 
+import './index.scss'
+import Logo from '../../components/Logo';
+
 const { login, register } = authState;
 
 export default function Auth(){
   const [formState, setFormState] = React.useState(login);
 
   const handleFormState = () => formState === login ? setFormState(register) : setFormState(login);
-  
+
   return (
     <>
-      <Panel size='md' title='Table Top' closable={false}>
+      <Panel size='lg' closable={false} id='auth-form'>
+        <Logo />
         {formState === login ? <Login /> : <Register />}
         <br />
         <button onClick={handleFormState}>{formState === login ? 'Register' : 'Login'}</button>
