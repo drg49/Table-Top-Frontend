@@ -5,7 +5,7 @@ import './index.scss';
 export default function Form({ children, id, columns }) {
 
   return (
-    <div id={id} className={`table-top-form ${columns}`}>
+    <div id={id} className={`table-top-form ${columns || ''}`}>
       {children}
     </div>
   )

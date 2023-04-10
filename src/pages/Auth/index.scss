@@ -10,7 +10,19 @@ body {
     position: fixed;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%) translateX(50%);
+    transform: translate(-50%, -50%);
     background: rgb(79 95 118 / 40%);
     border: none;
+
+    span {
+      display: flex;
+      justify-content: center;
+      cursor:pointer;
+      color:blue;
+      text-decoration:underline;
+
+      &:hover {
+        opacity: 0.8;
+      }
+    }
 }

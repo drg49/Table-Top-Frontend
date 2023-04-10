@@ -3,9 +3,8 @@ import Panel from '../../components/Panel';
 import Login from './Login';
 import { authState } from '../../utils/constants';
 import Register from './Register';
-
-import './index.scss'
 import Logo from '../../components/Logo';
+import './index.scss'
 
 const { login, register } = authState;
 
@@ -13,6 +12,8 @@ export default function Auth(){
   const [formState, setFormState] = React.useState(login);
 
   const handleFormState = () => formState === login ? setFormState(register) : setFormState(login);
+
+  const link = (text) => <span onClick={handleFormState}>{text}</span>
 
   return (
     <>
@@ -23,8 +24,7 @@ export default function Auth(){
       >
         <Logo />
         {formState === login ? <Login /> : <Register />}
-        <br />
-        <button onClick={handleFormState}>{formState === login ? 'Register' : 'Login'}</button>
+        {formState === login ? link('Sign up now') : link('Login')}
       </Panel>
     </>
   )
