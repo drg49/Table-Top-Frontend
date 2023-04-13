@@ -16,7 +16,7 @@ const closeIcon = <FontAwesomeIcon icon={faClose} size='sm' color='white' />;
  * @param {boolean} props.closable - Whether the panel can be closed by the user.
  * @param {boolean} props.fixedHeight - Whether the panel has a fixed height.
  */
-export default function Panel({ children, id, size, title, closable, fixedHeight }) {
+const Panel = ({ children, id, size, title, closable, fixedHeight }) => {
 
   return (
     <div id={id} className={`table-top-panel ${size} ${fixedHeight && 'fixed-height'}`}>
@@ -30,3 +30,5 @@ export default function Panel({ children, id, size, title, closable, fixedHeight
     </div>
   )
 }
+
+export default Panel;

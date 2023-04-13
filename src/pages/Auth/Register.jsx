@@ -3,7 +3,7 @@ import Form from '../../components/Form';
 import Input from '../../components/Input';
 import Button from '../../components/Button';
 
-export default function Register(){
+const Register = () => {
   const [registerForm, setRegisterForm] = React.useState({
     firstName: '',
     lastName: '',
@@ -59,3 +59,5 @@ export default function Register(){
     </Form>
   )
 }
+
+export default Register;

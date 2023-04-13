@@ -8,7 +8,7 @@ import './index.scss'
 
 const { login, register } = authState;
 
-export default function Auth(){
+const Auth = () => {
   const [formState, setFormState] = React.useState(login);
 
   const handleFormState = () => formState === login ? setFormState(register) : setFormState(login);
@@ -29,3 +29,5 @@ export default function Auth(){
     </>
   )
 }
+
+export default Auth;

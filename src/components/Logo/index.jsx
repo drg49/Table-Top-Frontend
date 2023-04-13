@@ -5,7 +5,10 @@ import './index.scss';
 
 const logo = <FontAwesomeIcon icon={faPlateWheat} size='5x' color='#a90409' />;
 
-export default function Logo() {
+/**
+ * The Table Top logo, with icon and text.
+ */
+const Logo = () => {
 
   return (
     <div className='table-top-logo'>
@@ -14,3 +17,5 @@ export default function Logo() {
     </div>
   )
 }
+
+export default Logo;

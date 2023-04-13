@@ -3,7 +3,7 @@ import Form from '../../components/Form';
 import Input from '../../components/Input';
 import Button from '../../components/Button';
 
-export default function Login(){
+const Login = () => {
   const [loginForm, setLoginForm] = React.useState({ username: '', password: '' })
 
   const handleChange = (e) => setLoginForm({ ...loginForm, [e.target.name]: e.target.value })
@@ -35,3 +35,5 @@ export default function Login(){
     </Form>
   )
 }
+
+export default Login;

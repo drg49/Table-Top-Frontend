@@ -1,8 +1,15 @@
 import React from "react";
 import './index.scss';
 
-// Columns: 1, 2, 3
-export default function Form({ children, id, columns }) {
+/**
+ * A form component that can be used to wrap form elements.
+ *
+ * @param {Object} props - The props object that contains the following:
+ * @param {ReactNode} props.children - The child elements to be wrapped by the form.
+ * @param {string} props.id - The ID attribute for the form.
+ * @param {number} props.columns - The number of columns to display the form elements in (1, 2, 3).
+ */
+const Form = ({ children, id, columns }) => {
 
   return (
     <div id={id} className={`table-top-form ${columns || ''}`}>
@@ -10,3 +17,5 @@ export default function Form({ children, id, columns }) {
     </div>
   )
 }
+
+export default Form;
