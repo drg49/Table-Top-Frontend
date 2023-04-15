@@ -1,15 +1,29 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Form from '../../components/Form';
 import Input from '../../components/Input';
 import Button from '../../components/Button';
+import { notifyError } from '../../components/Toast/methods';
 
 const Register = () => {
   const [registerForm, setRegisterForm] = React.useState({
-    firstName: '',
-    lastName: '',
-    username: '',
-    password: ''
+    'First Name': '',
+    'Last Name': '',
+    'Email': '',
+    'Username': '',
+    'Password': ''
   })
+
+  const handleSubmit = () => {
+    const registerFormKeys = Object.keys(registerForm);
+    
+    const emptyValue = registerFormKeys.find((key) => registerForm[key] === '');
+
+    if (emptyValue) {
+      notifyError(`${emptyValue} cannot be empty.`, 'bottom-center')
+    }
+  }
+
+  useEffect(() => console.log(registerForm), [registerForm])
 
   const handleChange = (e) => setRegisterForm({ ...registerForm, [e.target.name]: e.target.value })
 
@@ -18,42 +32,42 @@ const Register = () => {
       <Input 
         type="text"
         placeholder='First Name'
-        name='firstName'
+        name='First Name'
         change={handleChange}
         animate
       />
       <Input 
         type="text"
         placeholder='Last Name'
-        name='lastName'
+        name='Last Name'
         change={handleChange}
         animate
       />
       <Input 
         type="email"
         placeholder='Email'
-        name='email'
+        name='Email'
         change={handleChange}
         animate
       />
       <Input 
         type="text"
         placeholder='Username'
-        name='username'
+        name='Username'
         change={handleChange}
         animate
       />
       <Input
         type='password'
         placeholder='Password'
-        name='password'
+        name='Password'
         change={handleChange}
         animate
       />
       <Button
         text='Register'
         id='login-button'
-        click={() => {}}
+        click={handleSubmit}
         isPrimary
       />
     </Form>

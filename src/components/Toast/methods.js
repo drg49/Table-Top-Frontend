@@ -1,9 +1,14 @@
 import { toast } from "react-toastify";
 import { css } from "glamor";
 
-export const notifySuccess = (message) => {
+/**
+ * A toast method for notifying a success.
+ * @param {string} message - The message to display on the toast.
+ * @param {string} position - Position of the toast: 'top-right', 'top-center', 'top-left', 'bottom-right', 'bottom-center', 'bottom-left' Default: 'top-right'.
+ */
+export const notifySuccess = (message, position) => {
     toast.success(message, {
-      position: "top-right",
+      position: position,
       autoClose: 5000,
       hideProgressBar: false,
       closeOnClick: true,
@@ -15,9 +20,14 @@ export const notifySuccess = (message) => {
   });
 }
 
-export const notifyError = (message) => {
+/**
+ * A toast method for notifying an error.
+ * @param {string} message - The message to display on the toast.
+ * @param {string} position - Position of the toast: 'top-right', 'top-center', 'top-left', 'bottom-right', 'bottom-center', 'bottom-left' Default: 'top-right'.
+ */
+export const notifyError = (message, position) => {
     toast.error(message, {
-      position: "top-right",
+      position: position,
       autoClose: 5000,
       hideProgressBar: false,
       closeOnClick: true,
@@ -29,9 +39,14 @@ export const notifyError = (message) => {
   });
 };
 
-export const notifyWarn = (message) => {
+/**
+ * A toast method for notifying a warning.
+ * @param {string} message - The message to display on the toast.
+ * @param {string} position - Position of the toast: 'top-right', 'top-center', 'top-left', 'bottom-right', 'bottom-center', 'bottom-left' Default: 'top-right'.
+ */
+export const notifyWarn = (message, position) => {
     toast.warn(message, {
-      position: "top-right",
+      position: position,
       autoClose: 5000,
       hideProgressBar: false,
       closeOnClick: true,
