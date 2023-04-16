@@ -2,24 +2,22 @@ import React, { useEffect } from 'react';
 import Form from '../../components/Form';
 import Input from '../../components/Input';
 import Button from '../../components/Button';
-import { notifyError } from '../../components/Toast/methods';
+import * as api from '../../api/authentication'
+import { objectContainsEmptyValues } from '../../utils/validation';
 
 const Register = () => {
   const [registerForm, setRegisterForm] = React.useState({
-    'First Name': '',
-    'Last Name': '',
-    'Email': '',
-    'Username': '',
-    'Password': ''
+    'first_name': '',
+    'last_name': '',
+    'email': '',
+    'username': '',
+    'password': ''
   })
 
   const handleSubmit = () => {
-    const registerFormKeys = Object.keys(registerForm);
-    
-    const emptyValue = registerFormKeys.find((key) => registerForm[key] === '');
-
-    if (emptyValue) {
-      notifyError(`${emptyValue} cannot be empty.`, 'bottom-center')
+    if (!objectContainsEmptyValues(registerForm)) {
+      api.register(registerForm)
+          .then((data) => console.log(data));
     }
   }
 
@@ -32,35 +30,35 @@ const Register = () => {
       <Input 
         type="text"
         placeholder='First Name'
-        name='First Name'
+        name='first_name'
         change={handleChange}
         animate
       />
       <Input 
         type="text"
         placeholder='Last Name'
-        name='Last Name'
+        name='last_name'
         change={handleChange}
         animate
       />
       <Input 
         type="email"
         placeholder='Email'
-        name='Email'
+        name='email'
         change={handleChange}
         animate
       />
       <Input 
         type="text"
         placeholder='Username'
-        name='Username'
+        name='username'
         change={handleChange}
         animate
       />
       <Input
         type='password'
         placeholder='Password'
-        name='Password'
+        name='password'
         change={handleChange}
         animate
       />

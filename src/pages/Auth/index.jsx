@@ -13,7 +13,7 @@ const Auth = () => {
 
   const handleFormState = () => formState === login ? setFormState(register) : setFormState(login);
 
-  const link = (text) => <span onClick={handleFormState}>{text}</span>
+  const link = (text) => <span id='link' className='no-select' onClick={handleFormState}>{text}</span>
 
   return (
     <>

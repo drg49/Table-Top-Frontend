@@ -14,7 +14,7 @@ export const login = async (formData) => handleResponse(
   })
 );
 
-export const signUp = async (formData) => handleResponse(
+export const register = async (formData) => handleResponse(
   await fetch(`${root}/authentication/register`, {
     method: "POST",
     headers: {

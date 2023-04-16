@@ -3,7 +3,6 @@ import { Routes, Route } from 'react-router';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSpinner } from '@fortawesome/free-solid-svg-icons';
 import Toast from "./components/Toast";
-import * as toastMethods from './components/Toast/methods';
 
 const spinner = <FontAwesomeIcon icon={faSpinner} size='10x' color='gray' spin />;
 
@@ -15,7 +14,6 @@ const App = () => {
 
   React.useEffect(() => {
     setIsLoggedIn(false);
-    toastMethods.notifySuccess('This is a React template 😊');
   }, []);
 
   return (

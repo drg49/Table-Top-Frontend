@@ -11,7 +11,7 @@ const logo = <FontAwesomeIcon icon={faPlateWheat} size='5x' color='#a90409' />;
 const Logo = () => {
 
   return (
-    <div className='table-top-logo'>
+    <div className='table-top-logo no-select'>
       <span>{logo}</span>
       <h1>Table Top</h1>
     </div>

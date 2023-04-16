@@ -2,9 +2,18 @@ import React from 'react';
 import Form from '../../components/Form';
 import Input from '../../components/Input';
 import Button from '../../components/Button';
+import { objectContainsEmptyValues } from '../../utils/validation';
+import * as api from '../../api/authentication';
 
 const Login = () => {
   const [loginForm, setLoginForm] = React.useState({ username: '', password: '' })
+
+  const handleSubmit = () => {
+    if(!objectContainsEmptyValues(loginForm)) {
+      api.login(loginForm)
+        .then((data) => console.log(data));
+    }
+  }
 
   const handleChange = (e) => setLoginForm({ ...loginForm, [e.target.name]: e.target.value })
 
@@ -29,7 +38,7 @@ const Login = () => {
       <Button
         text='Login'
         id='login-button'
-        click={() => {}}
+        click={handleSubmit}
         isPrimary
       />
     </Form>
