@@ -1,18 +1,18 @@
 import React, { useState } from 'react';
 import Panel from '../../components/Panel';
 import Login from './Login';
-import { authState } from '../../utils/constants';
+import { AUTH_STATE } from '../../utils/constants';
 import Register from './Register';
 import Logo from '../../components/Logo';
 import './index.scss'
 
-const { login, register } = authState;
+const { LOGIN, REGISTER } = AUTH_STATE;
 
 const Auth = () => {
-  const [formState, setFormState] = useState(login);
+  const [formState, setFormState] = useState(LOGIN);
   const [isLoading, setIsLoading] = useState(false);
 
-  const handleFormState = () => formState === login ? setFormState(register) : setFormState(login);
+  const handleFormState = () => formState === LOGIN ? setFormState(REGISTER) : setFormState(LOGIN);
 
   const link = (text) => <span id='link' className='no-select' onClick={handleFormState}>{text}</span>
 
@@ -26,8 +26,8 @@ const Auth = () => {
         closable={false}
       >
         <Logo />
-        {formState === login ? <Login {...props} /> : <Register {...props} />}
-        {!isLoading && (formState === login ? link('Sign up now') : link('Login'))}
+        {formState === LOGIN ? <Login {...props} /> : <Register {...props} />}
+        {!isLoading && (formState === LOGIN ? link('Sign up now') : link('Login'))}
       </Panel>
     </>
   )

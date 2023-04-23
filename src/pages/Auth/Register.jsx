@@ -4,6 +4,11 @@ import Input from '../../components/Input';
 import Button from '../../components/Button';
 import * as api from '../../api/authentication'
 import { formContainsEmptyValues } from '../../utils/validation';
+import { parseError } from '../../utils/helperMethods';
+import { notifyError } from '../../utils/toastMethods';
+import { TOAST_POSITIONS } from '../../utils/constants';
+
+const { BOTTOM_CENTER } = TOAST_POSITIONS;
 
 const Register = ({ isLoading, setIsLoading }) => {
   const [registerForm, setRegisterForm] = useState({
@@ -18,8 +23,8 @@ const Register = ({ isLoading, setIsLoading }) => {
     if (!formContainsEmptyValues(registerForm)) {
       setIsLoading(true);
       api.register(registerForm)
-          .then((data) => console.log(data))
-            .catch((data) => console.log(data))
+          .then(() => window.location.reload())
+            .catch((err) => notifyError(parseError(err), BOTTOM_CENTER))
               .finally(() => setIsLoading(false));
     }
   }
