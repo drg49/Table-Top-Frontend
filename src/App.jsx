@@ -15,8 +15,9 @@ const App = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(null);
 
   useEffect(() => {
-    validateUser().then((data) => console.log(data))
-    setIsLoggedIn(false);
+    validateUser()
+      .then(() => setIsLoggedIn(true))
+        .catch(() => setIsLoggedIn(false))
   }, []);
 
   return (

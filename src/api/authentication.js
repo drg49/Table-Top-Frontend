@@ -19,7 +19,15 @@ export const register = async (formData) => handleResponse(
     headers: {
       "Content-Type": "application/json"
     },
+    credentials: 'include',
     body: JSON.stringify(formData)
+  })
+);
+
+export const logout = async () => handleResponse(
+  await fetch(`${root}/logout`, {
+    method: "POST",
+    credentials: 'include'
   })
 );
 

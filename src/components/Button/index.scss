@@ -2,8 +2,17 @@
   width: 100%;
   padding: 12px;
   font-size: 18px;
+  display: flex;
+    align-items: center;
+    justify-content: center;
 
   &:hover {
     cursor: pointer;
   }
+}
+
+.table-top-button-spinner {
+  margin-left: 7px;
+  font-size: 21px;
+  color: #007bff;
 }
