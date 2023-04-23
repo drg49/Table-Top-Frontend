@@ -1,12 +1,12 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import Form from '../../components/Form';
 import Input from '../../components/Input';
 import Button from '../../components/Button';
 import * as api from '../../api/authentication'
-import { objectContainsEmptyValues } from '../../utils/validation';
+import { formContainsEmptyValues } from '../../utils/validation';
 
 const Register = () => {
-  const [registerForm, setRegisterForm] = React.useState({
+  const [registerForm, setRegisterForm] = useState({
     'first_name': '',
     'last_name': '',
     'email': '',
@@ -15,7 +15,7 @@ const Register = () => {
   })
 
   const handleSubmit = () => {
-    if (!objectContainsEmptyValues(registerForm)) {
+    if (!formContainsEmptyValues(registerForm)) {
       api.register(registerForm)
           .then((data) => console.log(data));
     }

@@ -1,13 +1,13 @@
-import { notifyError } from "../components/Toast/methods";
-import { convertSnakeCaseToReadable } from "./methods";
+import { notifyError } from "./toastMethods";
 
-export const objectContainsEmptyValues = (obj) => {
+// Use this validation if all fields in the form are required
+export const formContainsEmptyValues = (obj) => {
   const registerFormKeys = Object.keys(obj);
     
   const emptyValue = registerFormKeys.find((key) => obj[key] === '');
 
   if (emptyValue) {
-    notifyError(`${convertSnakeCaseToReadable(emptyValue)} cannot be empty.`, 'bottom-center');
+    notifyError('Please fill out all required fields before submitting the form.', 'bottom-center', false);
     return true;
   }
 

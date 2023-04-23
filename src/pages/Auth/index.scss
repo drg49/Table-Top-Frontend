@@ -16,10 +16,10 @@ body {
 
     #link {
       display: flex;
-      justify-content: center;
+      width: fit-content;
+      margin: auto;
       cursor:pointer;
       color:blue;
-      text-decoration:underline;
 
       &:hover {
         opacity: 0.8;

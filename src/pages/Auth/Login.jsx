@@ -1,15 +1,15 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Form from '../../components/Form';
 import Input from '../../components/Input';
 import Button from '../../components/Button';
-import { objectContainsEmptyValues } from '../../utils/validation';
+import { formContainsEmptyValues } from '../../utils/validation';
 import * as api from '../../api/authentication';
 
 const Login = () => {
-  const [loginForm, setLoginForm] = React.useState({ username: '', password: '' })
+  const [loginForm, setLoginForm] = useState({ username: '', password: '' })
 
   const handleSubmit = () => {
-    if(!objectContainsEmptyValues(loginForm)) {
+    if(!formContainsEmptyValues(loginForm)) {
       api.login(loginForm)
         .then((data) => console.log(data));
     }
@@ -17,7 +17,7 @@ const Login = () => {
 
   const handleChange = (e) => setLoginForm({ ...loginForm, [e.target.name]: e.target.value })
 
-  React.useEffect(() => console.log(loginForm), [loginForm])
+  useEffect(() => console.log(loginForm), [loginForm])
 
   return (
     <Form id='login-form'>
