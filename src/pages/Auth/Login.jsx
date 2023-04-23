@@ -25,6 +25,7 @@ const Login = ({ isLoading, setIsLoading }) => {
         name='username'
         change={handleChange}
         animate
+        preventSpaces
       />
       <Input
         type='password'
@@ -32,6 +33,7 @@ const Login = ({ isLoading, setIsLoading }) => {
         name='password'
         change={handleChange}
         animate
+        preventSpaces
       />
       <Button
         text='Login'

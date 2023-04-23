@@ -17,7 +17,7 @@ const Register = ({ isLoading, setIsLoading }) => {
     'email': '',
     'username': '',
     'password': ''
-  })
+  });
 
   const handleSubmit = () => {
     if (!formContainsEmptyValues(registerForm)) {
@@ -27,9 +27,9 @@ const Register = ({ isLoading, setIsLoading }) => {
             .catch((err) => notifyError(parseError(err), BOTTOM_CENTER))
               .finally(() => setIsLoading(false));
     }
-  }
+  };
 
-  const handleChange = (e) => setRegisterForm({ ...registerForm, [e.target.name]: e.target.value })
+  const handleChange = (e) => setRegisterForm({ ...registerForm, [e.target.name]: e.target.value.trim() });
 
   return (
     <Form id='login-form'>
@@ -53,6 +53,7 @@ const Register = ({ isLoading, setIsLoading }) => {
         name='email'
         change={handleChange}
         animate
+        preventSpaces
       />
       <Input 
         type="text"
@@ -60,6 +61,7 @@ const Register = ({ isLoading, setIsLoading }) => {
         name='username'
         change={handleChange}
         animate
+        preventSpaces
       />
       <Input
         type='password'
@@ -67,6 +69,7 @@ const Register = ({ isLoading, setIsLoading }) => {
         name='password'
         change={handleChange}
         animate
+        preventSpaces
       />
       <Button
         text='Register'
