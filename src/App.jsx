@@ -5,6 +5,8 @@ import { faSpinner } from '@fortawesome/free-solid-svg-icons';
 import { ToastContainer } from "react-toastify";
 import { validateUser } from "./api/authentication";
 import "react-toastify/dist/ReactToastify.css";
+import SideNav from "./components/SideNav";
+import Details from "./components/Details";
 
 const spinner = <FontAwesomeIcon icon={faSpinner} size='10x' color='gray' spin />;
 
@@ -17,19 +19,22 @@ const App = () => {
   useEffect(() => {
     validateUser()
       .then(() => setIsLoggedIn(true))
-        .catch(() => setIsLoggedIn(false))
+      .catch(() => setIsLoggedIn(false))
   }, []);
 
   return (
     <>
       {isLoggedIn &&
-        <div>
-          <Suspense fallback={spinner}>
-            <Routes>
-              <Route path='/' element={<Home />} />
-
-            </Routes>
-          </Suspense>
+        <div className="container">
+          <SideNav />
+          <Details />
+          <div className="main">
+            <Suspense fallback={spinner}>
+              <Routes>
+                <Route path='/' element={<Home />} />
+              </Routes>
+            </Suspense>
+          </div>
         </div>}
       {isLoggedIn === false && <Auth />}
       {isLoggedIn === null && <div id='main-spinner'>{spinner}</div>}
