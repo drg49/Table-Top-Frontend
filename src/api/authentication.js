@@ -28,7 +28,7 @@ export const logout = async () => handleResponse(
     method: "POST",
     credentials: 'include'
   })
-);
+).then(() => window.location.reload());
 
 export const validateUser = async () => handleResponse(
   await fetch(`${root}/validate-user`, {
